@@ -8,7 +8,7 @@ const MAX_EPOCHS = 800;
 export const useSimStore = create((set, get) => ({
   // ── Level state ──────────────────────────────────────────────
   currentLevel: 0,
-  unlockedLevels: new Set([0]),
+  unlockedLevels: new Set(LEVELS.map((_, i) => i)),
   completedLevels: new Set(),       // tracks which levels reached global min
 
   // ── Optimizer config ─────────────────────────────────────────
