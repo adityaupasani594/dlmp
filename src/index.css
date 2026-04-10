@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  body {
+    background-color: #0a0e1a;
+    color: white;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Thin custom scrollbar */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #334155 transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar { width: 4px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: #334155; border-radius: 999px; }
+}
+
+/* KaTeX display override — keep equations compact */
+.katex-display {
+  margin: 0.25em 0 !important;
+  overflow-x: auto !important;
+}
+.katex { font-size: 0.85em !important; }
+
+/* Range input — custom thumb */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #4f8ef7;
+  cursor: pointer;
+  box-shadow: 0 0 6px #4f8ef766;
+}
+input[type='range']::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #4f8ef7;
+  cursor: pointer;
+  border: none;
+}
+
+/* Canvas wrapper keeps R3F canvas from overflowing */
+canvas {
+  display: block !important;
+  outline: none;
+}
+
+/* Print / PDF — hide everything except the certificate canvas */
+@media print {
+  body * { visibility: hidden !important; }
+  .fixed { visibility: visible !important; }
+  .fixed canvas { visibility: visible !important; }
+  .fixed > div > div:last-child { display: none !important; } /* hide buttons */
+}
+
