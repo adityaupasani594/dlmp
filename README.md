@@ -1,16 +1,24 @@
-# React + Vite
+# The Optimizer Trap
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive 3D simulator that teaches how neural network optimizers navigate complex loss landscapes — through hands-on experimentation, not just theory.
 
-Currently, two official plugins are available:
+Students progress through three levels (Saddle Point → Deep Trap → Noisy Valley), experimenting with SGD, Momentum, and Adam to discover how each optimizer behaves. After completing all levels they take a quiz and receive a certificate.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Technologies Used
 
-## React Compiler
+| Technology | Purpose |
+|---|---|
+| [React](https://react.dev/) + [Vite](https://vite.dev/) | UI framework and build tooling |
+| [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) + [Three.js](https://threejs.org/) | 3D loss-landscape rendering |
+| [@react-three/drei](https://github.com/pmndrs/drei) | Three.js helpers (orbit controls, etc.) |
+| [@react-three/postprocessing](https://github.com/pmndrs/react-postprocessing) | Post-processing visual effects |
+| [Zustand](https://zustand-demo.pmnd.rs/) | Global simulation state management |
+| [KaTeX](https://katex.org/) + [react-katex](https://github.com/talyssonoc/react-katex) | Math formula rendering |
+| [Tailwind CSS](https://tailwindcss.com/) | Utility-first styling |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
